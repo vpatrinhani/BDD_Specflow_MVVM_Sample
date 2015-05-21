@@ -1,0 +1,81 @@
+﻿@model Calculator.UIBusiness.ViewModel.ArithmeticViewModel
+
+@{
+    ViewBag.Title = "Calculator";
+}
+
+@section scripts
+{
+    <script>
+        $(function() {
+            // Get all the keys from document
+            var formArithmetic = $('#form-arithmetic');
+
+            var keyNumbers = $('#calculator span.number').click(function (e) {
+                
+                var spanVal = this.innerHTML;
+
+                var currVal = $("#selectedNumber").attr("value");
+
+                if (currVal == "0") currVal = "";
+
+                currVal += spanVal;
+
+                $("#selectedNumber").attr("value", currVal);
+
+                $(".top .screen").text(currVal);
+
+                //formArithmetic.submit();
+            });
+
+            var keyActions = $('#calculator span.action').click(function (e) {
+
+                var spanVal = this.innerHTML;
+
+                $("#selectedAction").attr("value", spanVal);
+
+                formArithmetic.submit();
+            });
+        });
+    </script>
+}
+
+    @using (Html.BeginForm("Index", "Arithmetic", FormMethod.Post, new {Id = "form-arithmetic"}))
+    {
+        @Html.HiddenFor(m => m.LastOperation)
+        @Html.HiddenFor(m => m.BNewEntry)
+        @Html.HiddenFor(m => m.TempNumber)
+
+        @Html.HiddenFor(m => m.Model.Result)
+        @Html.HiddenFor(m => m.Model.TempNumber)
+        
+        <input type="hidden" id="selectedNumber" name="selectedNumber" value=""/>
+        <input type="hidden" id="selectedAction" name="selectedAction" value=""/>
+        
+        <div id="calculator">
+            <!-- Screen and clear key -->
+            <div class="top">
+                <div class="screen">@Model.UpdateNumber</div>
+            </div>
+
+            <div class="keys">
+                <!-- operators and other keys -->
+                <span class="number">7</span>
+                <span class="number">8</span>
+                <span class="number">9</span>
+                <span class="operator action">+</span>
+                <span class="number">4</span>
+                <span class="number">5</span>
+                <span class="number">6</span>
+                <span class="operator action">-</span>
+                <span class="number">1</span>
+                <span class="number">2</span>
+                <span class="number">3</span>
+                <span class="operator action">÷</span>
+                <span class="clear action">C</span>
+                <span class="number">0</span>
+                <span class="eval action">=</span>
+                <span class="operator action">x</span>
+            </div>
+        </div>
+    }
