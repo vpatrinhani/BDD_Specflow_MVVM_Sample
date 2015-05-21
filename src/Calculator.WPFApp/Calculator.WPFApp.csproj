@@ -94,7 +94,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\Calculator.UIBusiness\Calculator.UIBusiness.csproj">
+    <ProjectReference Include="..\Calculator.UIBusiness\Calculator.UIBusiness.csproj">
       <Project>{fe75fc9b-43bd-4798-9ac8-367b1e0a1b65}</Project>
       <Name>Calculator.UIBusiness</Name>
     </ProjectReference>

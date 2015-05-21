@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.WPFApp", "Calculator\Calculator.WPFApp.csproj", "{FD13DD2E-15D5-4D46-8ED9-E362E19E2FB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.WPFApp", "src\Calculator.WPFApp\Calculator.WPFApp.csproj", "{FD13DD2E-15D5-4D46-8ED9-E362E19E2FB2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-UI Business", "2-UI Business", "{8F78793A-CB1C-4ACF-915E-7524FBAFBB9E}"
 EndProject
